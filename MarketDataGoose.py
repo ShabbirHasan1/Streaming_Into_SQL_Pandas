@@ -25,7 +25,7 @@ from ibapi.wrapper import EWrapper
 # types
 from ibapi.common import *  # @UnusedWildImport
 from ibapi.order import *  # @UnusedWildImport
-from DBHelper import DBHelper
+from DBHelperNQ import DBHelper
 
 
 def SetupLogger():
@@ -261,7 +261,7 @@ def main():
         if args.global_cancel:
             app.globalCancelOnly = True
         # ! [connect]
-        app.connect("127.0.0.1", args.port, clientId=0)
+        app.connect("127.0.0.1", args.port, clientId=1)
         # ! [connect]
         print("serverVersion:%s connectionTime:%s" % (app.serverVersion(),
                                                       app.twsConnectionTime()))
